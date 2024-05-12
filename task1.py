@@ -24,8 +24,6 @@ class  Account:
             self.f_status=f_status
 
 
-
-
     #Account Creation
     def create_acc(self):
         print("\n \n")
@@ -136,10 +134,84 @@ class  Account:
                             print("Your Fuliza Loan is Unpaid. \n Please pay it before requesting for another Loan ")
             else:
                     print("Wrong PIN. Please Input the Right PIN")
+    def lipa_na_mpesa(self):
+            print("\n \n")
+            print("====WELCOME TO LIPA NA MPESA====")
+            print("1.Buy goods and services")
+            print("2.Paybill")
+            print("3.Pochi la biashara")
+            option =  input("Input the option: ")
+
+            if option == "1":
+                    print("\n \n")
+                    print("==Till number==")
+                    till_number = input("till number: ")
+                    print("==Amount==")
+                    amount = int(input("amount: "))
+                    print("==PIN==")
+                    pin = input("pin: ")
+                    if pin == self.pin:
+                            if amount <= self.amount:
+                                    self.amount-=amount
+                                    print(f"Success. You have successfully paid $ {amount} to account number {till_number}.\n Your Account Balance is now $ {self.amount}")
+                            else:
+                                    print(f"Insufficient Funds in Your Account to send Amount $ {amount}.\n Your current Acount Balance is $ {self.amount}")
                     
-                
+            elif option == "2":
+                    print("\n \n")
+                    print("==Paybill==")
+                    paybill = input("Enter paybill/business number: ")
+                    print("==Account number==")
+                    account_number = input("Enter account number: ")
+                    print("==Amount")
+                    amount = int(input("Enter amount: "))
+                    print("==PIN==")
+                    pin = input("Enter PIN number: ")
+                    if pin==self.pin:
+                            if amount <= self.amount:
+                                    self.amount-=amount
+                                    print(f"Success. You have successfully paid $ {amount} to paybill {paybill} account {account_number}.\n Your account Balance is now $ {self.amount}")
+                            else:
+                                    print(f"Insufficient Funds in your account to send amount $ {amount}.\n Your current account balance is $ {self.amount}")
+
+            elif option == "3":
+                    print("\n \n")
+                    print("==Pochi la Biashara==")
+                    number = int(input("Phone number: "))
+                    print("==Amount==")
+                    amount = int(input("Amount: "))
+                    print("==PIN==")
+                    pin = input("Enter PIN number: ")
+                    if pin == self.pin:
+                            if amount <=self.amount:
+                                    self.amount -= amount
+                                    print(f"Success. You have successfully paid $ {amount} to {number}.\n Your account Balance is now $ {self.amount}")
+                            else:
+                                    print(f"Insufficient Funds in your account to send amount $ {amount}.\n Your current account balance is $ {self.amount}")
 
 
+                                    
+    def send_money(self):
+        print("\n \n")
+        print("==Send money==")
+        while True:
+                number = input("Phone number: ")
+                if len(number) == 10 and number.isdigit():
+                        break
+                else:
+                 print("Error: Phone number must be exactly 10 digits.")
+
+        print("==AMOUNT==")
+        amount = int(input("Enter Amount: "))
+        print("\n")
+        print("==PIN==")
+        pin = input("Enter PIN number: ")
+        if pin==self.pin:
+            if amount <= self.amount:
+                    self.amount -=amount    
+                    print(f"Success. You sent $ {amount} to {number}.\n Your balance is {self.amount}")
+            else:
+                    print(f"Insufficient Funds in your account to send amount $ {amount}.\n Your current balance is {self.amount}")
 
 
 
@@ -154,6 +226,8 @@ class  Account:
             print("5. Change PIN")
             print("6. Loans & Savings")
             print("7. Fuliza Mpesa")
+            print("8.lipa na mpesa")
+            print("9.Send money")
             print("0. Exit")
 
     
@@ -181,9 +255,14 @@ class  Account:
                         
             elif option ==7:
                         self.fuliza()
-            elif option ==0:
-                        while option ==0:
-                                break
+            elif option == 8:
+                    self.lipa_na_mpesa()
+            elif option == 9:
+                    self.send_money()
+                    
+            elif option == 0:
+                    print("====You exit the system===")
+                    
             else:
                         print("Still working on Development")
 account1=Account(
