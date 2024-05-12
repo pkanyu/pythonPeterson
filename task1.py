@@ -24,8 +24,6 @@ class  Account:
             self.f_status=f_status
 
 
-
-
     #Account Creation
     def create_acc(self):
         print("\n \n")
@@ -145,12 +143,11 @@ class  Account:
             option =  input("Input the option: ")
 
             if option == "1":
+                    print("\n \n")
                     print("==Till number==")
                     till_number = input("till number: ")
-                    print("\n")
                     print("==Amount==")
                     amount = int(input("amount: "))
-                    print("\n")
                     print("==PIN==")
                     pin = input("pin: ")
                     if pin == self.pin:
@@ -161,12 +158,11 @@ class  Account:
                                     print(f"Insufficient Funds in Your Account to send Amount $ {amount}.\n Your current Acount Balance is $ {self.amount}")
                     
             elif option == "2":
+                    print("\n \n")
                     print("==Paybill==")
                     paybill = input("Enter paybill/business number: ")
-                    print("\n")
                     print("==Account number==")
                     account_number = input("Enter account number: ")
-                    print("\n")
                     print("==PIN==")
                     pin = input("Enter PIN number: ")
                     if pin==self.pin:
@@ -177,12 +173,11 @@ class  Account:
                                     print(f"Insufficient Funds in your account to send amount $ {amount}.\n Your current account balance is $ {self.amount}")
 
             elif option == "3":
+                    print("\n \n")
                     print("==Pochi la Biashara==")
                     number = int(input("Phone number: "))
-                    print("\n")
                     print("==Amount==")
                     amount = input("Amount: ")
-                    print("\n")
                     print("==PIN==")
                     pin = input("Enter PIN number: ")
                     if pin == self.pin:
@@ -195,6 +190,7 @@ class  Account:
 
                                     
     def send_money(self):
+        print("\n \n")
         print("==Send money==")
         while True:
                 number = input("Phone number: ")
@@ -202,7 +198,7 @@ class  Account:
                         break
                 else:
                  print("Error: Phone number must be exactly 10 digits.")
-        print("\n")
+
         print("==AMOUNT==")
         amount = int(input("Enter Amount: "))
         print("\n")
