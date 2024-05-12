@@ -163,6 +163,8 @@ class  Account:
                     paybill = input("Enter paybill/business number: ")
                     print("==Account number==")
                     account_number = input("Enter account number: ")
+                    print("==Amount")
+                    amount = int(input("Enter amount: "))
                     print("==PIN==")
                     pin = input("Enter PIN number: ")
                     if pin==self.pin:
@@ -177,7 +179,7 @@ class  Account:
                     print("==Pochi la Biashara==")
                     number = int(input("Phone number: "))
                     print("==Amount==")
-                    amount = input("Amount: ")
+                    amount = int(input("Amount: "))
                     print("==PIN==")
                     pin = input("Enter PIN number: ")
                     if pin == self.pin:
